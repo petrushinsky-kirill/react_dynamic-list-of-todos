@@ -9,7 +9,7 @@ export const TodoFilter = memo(
     data: Todo[];
     setFilteredData: React.Dispatch<React.SetStateAction<Todo[]>>;
   }) => {
-    const [selectValue, setSelectValue] = useState('');
+    const [selectValue, setSelectValue] = useState('all');
     const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
@@ -70,7 +70,7 @@ export const TodoFilter = memo(
                 className="delete"
                 onClick={() => {
                   setInputValue('');
-                  setSelectValue('');
+                  setSelectValue('all');
                 }}
               />
             </span>

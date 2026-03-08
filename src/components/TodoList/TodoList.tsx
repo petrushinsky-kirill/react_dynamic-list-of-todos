@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Todo } from '../../types/Todo';
+import classNames from 'classnames';
 
 interface Props {
   data: Todo[];
@@ -37,9 +38,9 @@ export const TodoList: React.FC<Props> = memo(
             </td>
             <td className="is-vcentered is-expanded">
               <p
-                className={
-                  todo.completed ? 'has-text-success' : 'has-text-danger'
-                }
+                className={classNames(
+                  todo.completed ? 'has-text-success' : 'has-text-danger',
+                )}
               >
                 {todo.title}
               </p>
@@ -55,11 +56,11 @@ export const TodoList: React.FC<Props> = memo(
                 }}
               >
                 <span className="icon">
-                  {!isModalOpened ? (
-                    <i className="far fa-eye" />
-                  ) : (
-                    <i className="far fa-eye-slash" />
-                  )}
+                  <i
+                    className={classNames(
+                      isModalOpened ? 'far fa-eye-slash' : 'far fa-eye',
+                    )}
+                  />
                 </span>
               </button>
             </td>
