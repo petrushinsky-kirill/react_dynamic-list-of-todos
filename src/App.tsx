@@ -42,7 +42,6 @@ export const App: React.FC = () => {
               ) : (
                 <TodoList
                   data={filteredData}
-                  isModalOpened={isModalOpened}
                   setIsModalOpened={setIsModalOpened}
                   setSelectedTodo={setSelectedTodo}
                 />

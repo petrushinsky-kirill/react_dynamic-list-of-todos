@@ -4,13 +4,12 @@ import classNames from 'classnames';
 
 interface Props {
   data: Todo[];
-  isModalOpened: boolean;
   setIsModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedTodo: React.Dispatch<React.SetStateAction<Todo | null>>;
 }
 
 export const TodoList: React.FC<Props> = memo(
-  ({ data, isModalOpened, setIsModalOpened, setSelectedTodo }: Props) => (
+  ({ data, setIsModalOpened, setSelectedTodo }: Props) => (
     <table className="table is-narrow is-fullwidth">
       <thead>
         <tr>
@@ -56,11 +55,7 @@ export const TodoList: React.FC<Props> = memo(
                 }}
               >
                 <span className="icon">
-                  <i
-                    className={classNames(
-                      isModalOpened ? 'far fa-eye-slash' : 'far fa-eye',
-                    )}
-                  />
+                  <i className="far fa-eye" />
                 </span>
               </button>
             </td>
